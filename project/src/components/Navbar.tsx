@@ -29,8 +29,8 @@ const Navbar: React.FC = () => {
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
       isScrolled 
-        ? 'bg-white/95 backdrop-blur-xl shadow-xl border-b border-navy-100' 
-        : 'bg-white/80 backdrop-blur-sm'
+        ? 'bg-black backdrop-blur-xl shadow-xl border-b border-n-100' 
+        : 'bg-black/80 backdrop-blur-sm'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
@@ -43,10 +43,10 @@ const Navbar: React.FC = () => {
               <Sparkles className="absolute -top-1 -right-1 h-4 w-4 text-gold-500 animate-pulse" />
             </div>
             <div>
-              <span className="text-2xl font-bold bg-gradient-to-r from-navy-800 to-indigo-800 bg-clip-text text-transparent">
+              <span className="text-2xl font-bold bg-white bg-clip-text text-transparent">
                 FOCUS
               </span>
-              <div className="text-xs text-gray-500 -mt-1">CSE Governance</div>
+              <div className="text-xs text-white -mt-1">CSE Governance</div>
             </div>
           </Link>
 
@@ -58,8 +58,8 @@ const Navbar: React.FC = () => {
                 to={item.path}
                 className={`relative px-4 py-2 text-sm font-medium transition-all duration-300 rounded-lg group ${
                   isActive(item.path)
-                    ? 'text-navy-700 bg-gradient-to-r from-navy-50 to-indigo-50'
-                    : 'text-gray-700 hover:text-navy-700 hover:bg-gray-50'
+                    ? 'text-navy-800 bg-gradient-to-r from-navy-50 to-indigo-50'
+                    : 'text-white hover:text-navy-700 hover:bg-gray-50'
                 }`}
               >
                 {item.name}
