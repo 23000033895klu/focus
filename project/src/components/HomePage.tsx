@@ -4,59 +4,48 @@ import { ArrowRight, Target, Lightbulb, Users, Trophy, Sparkles, Star, Zap } fro
 const HomePage: React.FC = () => {
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Animated Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-navy-900 via-indigo-900 to-purple-900">
-          <div className="absolute top-20 left-20 w-96 h-96 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-full blur-3xl animate-float"></div>
-          <div className="absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-r from-gold-400/20 to-amber-400/20 rounded-full blur-3xl animate-float-delayed"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-teal-400/20 to-cyan-400/20 rounded-full blur-3xl animate-pulse"></div>
-        </div>
+{/* Hero Section */}
+<section className="min-h-screen flex items-center justify-center p-[3cm] bg-gray-100">
+  {/* Centered Content Box with background */}
+  <div
+    className="relative bg-cover bg-center bg-no-repeat rounded-2xl shadow-2xl p-8 w-full max-w-8xl h-[500px] md:h-[700px] flex flex-col items-center justify-center text-center overflow-hidden"
+    style={{ backgroundImage: "url('./images/KL-University.jpeg')" }}
+  >
+    {/* Black overlay */}
+    <div className="absolute inset-0 bg-black/50 rounded-2xl"></div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="animate-fade-in">
-            <div className="flex justify-center mb-8">
-              <div className="relative">
-                <Sparkles className="absolute -top-4 -left-4 h-8 w-8 text-gold-400 animate-pulse" />
-                <div className="bg-gradient-to-r from-gold-500 to-amber-600 p-4 rounded-2xl shadow-2xl">
-                  <Star className="h-12 w-12 text-white" />
-                </div>
-                <Sparkles className="absolute -bottom-4 -right-4 h-6 w-6 text-blue-400 animate-pulse" />
-              </div>
-            </div>
-            
-            <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-white via-blue-100 to-purple-100 bg-clip-text text-transparent animate-slide-up">
-              Welcome To FOCUS
-            </h1>
-            
-            <p className="text-xl md:text-2xl mb-8 text-blue-200 max-w-4xl mx-auto leading-relaxed animate-slide-up-delay">
-              FOCUS is a vibrant community that fosters innovation and excellence in the CSE Department.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-6 justify-center animate-fade-in-delay">
-              <button className="group bg-gradient-to-r from-gold-500 to-amber-600 text-white px-8 py-4 rounded-xl font-semibold hover:from-gold-600 hover:to-amber-700 transform hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-gold-500/25 relative overflow-hidden">
-                <span className="relative z-10 flex items-center justify-center">
-                  Get Started
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              </button>
-              
-              <button className="group border-2 border-white/30 text-white px-8 py-4 rounded-xl font-semibold hover:bg-white/10 hover:border-white/50 backdrop-blur-sm transition-all duration-300 relative overflow-hidden">
-                <span className="relative z-10">Learn More</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              </button>
-            </div>
-          </div>
+    {/* Content */}
+    <div className="relative z-10">
+      <div className="flex justify-center mb-4">
+        <div className="bg-gradient-to-r from-gold-500 to-amber-600 p-4 rounded-2xl shadow-xl">
+          <Star className="h-12 w-12 text-white" />
         </div>
+      </div>
 
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-white/50 rounded-full mt-2 animate-pulse"></div>
-          </div>
-        </div>
-      </section>
+      <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white">
+        Welcome To FOCUS
+      </h1>
+
+      <p className="text-lg md:text-xl mb-6 text-gray-100 leading-relaxed">
+        FOCUS is a vibrant community that fosters innovation and excellence in the CSE Department.
+      </p>
+
+      <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <button className="group bg-gradient-to-r from-gold-500 to-amber-600 text-white px-6 py-3 rounded-xl font-semibold hover:from-gold-600 hover:to-amber-700 transform hover:scale-105 transition-all duration-300 shadow-xl">
+          <span className="flex items-center justify-center">
+            Get Started
+            <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+          </span>
+        </button>
+
+        <button className="group border-2 border-white/50 text-white px-6 py-3 rounded-xl font-semibold hover:bg-white/10 hover:border-white/70 transition-all duration-300">
+          Learn More
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
 
       {/* Mission Section */}
       <section className="py-24 bg-gradient-to-br from-white via-blue-50/50 to-indigo-50/50 relative overflow-hidden">

@@ -12,13 +12,7 @@ const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className="relative bg-gradient-to-br from-navy-900 via-indigo-900 to-purple-900 text-white overflow-hidden">
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-20 left-20 w-64 h-64 bg-gradient-to-r from-blue-400/10 to-purple-400/10 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-r from-gold-400/10 to-amber-400/10 rounded-full blur-3xl animate-float-delayed"></div>
-      </div>
-
+    <footer className="relative bg-black/90 text-white overflow-hidden">
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Brand Section */}
