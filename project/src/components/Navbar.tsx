@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, GraduationCap, Sparkles } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import logo from '../images/focusLogo.png'; // Place your logo in `src/assets/logo.png`
+
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -37,16 +39,12 @@ const Navbar: React.FC = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3 group">
             <div className="relative">
-              <div className="bg-gradient-to-r from-navy-600 to-indigo-700 p-2 rounded-xl shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
-                <GraduationCap className="h-6 w-6 text-white" />
-              </div>
-              <Sparkles className="absolute -top-1 -right-1 h-4 w-4 text-gold-500 animate-pulse" />
             </div>
             <div>
-              <span className="text-2xl font-bold bg-white bg-clip-text text-transparent">
-                FOCUS
-              </span>
-              <div className="text-xs text-white -mt-1">CSE Governance</div>
+            <div className=" ">
+              <img src={logo} alt="Focus Logo" className="w-38 h-12 object-contain" />
+            </div>
+              <div className="text-xs text-white -mt-3">CSE Governance</div>
             </div>
           </Link>
 

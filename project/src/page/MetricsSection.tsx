@@ -7,28 +7,28 @@ const MetricsSection = () => {
       number: "8",
       label: "Wings",
       gradient: "from-[#1B263B] to-[#0D1B2A]",
-      bgImage: "../images/klLib.png",
+      bgImage: "../src/images/klLib.png",
     },
     {
       icon: Award,
       number: "8",
       label: "Advisors",
       gradient: "from-[#1B263B] to-[#0D1B2A]",
-      bgImage: "../images/kl2.png",
+      bgImage: "../src/images/kl2.png",
     },
     {
       icon: Users,
       number: "8",
       label: "Directors",
       gradient: "from-[#1B263B] to-[#0D1B2A]",
-      bgImage: "../images/l32.jpeg",
+      bgImage: "../src/images/l32.jpeg",
     },
     {
       icon: Calendar,
       number: "150",
       label: "Active Leads",
       gradient: "from-[#1B263B] to-[#0D1B2A]",
-      bgImage: "../images/kl4.jpg",
+      bgImage: "../src/images/kl4.jpg",
     }
   ];
 
