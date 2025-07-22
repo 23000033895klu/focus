@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Eye, EyeOff, Mail, Lock, User, GraduationCap, Sparkles } from 'lucide-react';
+import { Eye, EyeOff, Mail, Lock, User, Sparkles } from 'lucide-react';
+import logo from '../images/focusLogo.png'; // Place your logo in `src/assets/logo.png`
 
 interface AuthPageProps {
   onLogin: () => void;
@@ -19,8 +20,6 @@ const AuthPage: React.FC<AuthPageProps> = ({ onLogin }) => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
-    
-    // Simulate authentication with loading
     setTimeout(() => {
       setIsLoading(false);
       onLogin();
@@ -28,45 +27,42 @@ const AuthPage: React.FC<AuthPageProps> = ({ onLogin }) => {
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-navy-900 via-indigo-900 to-purple-900 flex items-center justify-center p-4 relative overflow-hidden">
-      {/* Animated Background Elements */}
+    <div className="min-h-screen bg-gradient-to-br from-[#0D1B2A] via-[#1B263B] to-[#415A77] flex items-center justify-center p-4 relative overflow-hidden">
+      {/* Background Motion Blur Elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-20 left-20 w-72 h-72 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-20 right-20 w-96 h-96 bg-gradient-to-r from-gold-400/20 to-amber-400/20 rounded-full blur-3xl animate-float-delayed"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-teal-400/20 to-cyan-400/20 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute top-24 left-24 w-72 h-72 bg-[#B3AF8F]/20 rounded-full blur-3xl animate-float" />
+        <div className="absolute bottom-24 right-24 w-96 h-96 bg-[#E0E1DD]/20 rounded-full blur-3xl animate-float-delayed" />
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-[#415A77]/20 rounded-full blur-3xl animate-pulse" />
       </div>
 
       <div className="max-w-md w-full relative z-10">
-        {/* Logo and Header */}
+        {/* Header Logo Section */}
         <div className="text-center mb-8 animate-fade-in">
           <div className="relative inline-flex items-center justify-center w-20 h-20 mb-6">
-            <div className="absolute inset-0 bg-gradient-to-r from-gold-400 to-amber-500 rounded-full animate-spin-slow opacity-75"></div>
-            <div className="relative bg-gradient-to-r from-gold-500 to-amber-600 w-16 h-16 rounded-full flex items-center justify-center">
-              <GraduationCap className="h-8 w-8 text-white" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#B3AF8F] to-[#E0E1DD] rounded-full animate-spin-slow opacity-60" />
+            <div className="relative w-16 h-16 rounded-full overflow-hidden flex items-center justify-center bg-[#B3AF8F]">
+              <img src={logo} alt="Focus Logo" className="w-12 h-12 object-contain" />
             </div>
-            <Sparkles className="absolute -top-2 -right-2 h-6 w-6 text-gold-400 animate-pulse" />
+            <Sparkles className="absolute -top-2 -right-2 h-6 w-6 text-[#E0E1DD] animate-pulse" />
           </div>
-          <h1 className="text-4xl font-bold text-white mb-2 bg-gradient-to-r from-white via-blue-100 to-purple-100 bg-clip-text text-transparent">
+          <h1 className="text-4xl font-bold text-white mb-2 bg-gradient-to-r from-[#E0E1DD] via-[#B3AF8F] to-[#415A77] bg-clip-text text-transparent">
             FOCUS
           </h1>
-          <p className="text-lg text-blue-200 font-medium">CSE Student Governance Body</p>
-          <p className="text-sm text-blue-300 mt-2">Empowering Excellence & Innovation</p>
+          <p className="text-lg text-[#E0E1DD] font-medium">CSE Student Governance Body</p>
+          <p className="text-sm text-[#E0E1DD]/70 mt-1">Empowering Excellence & Innovation</p>
         </div>
 
-        {/* Auth Form */}
-        <div className="bg-white/10 backdrop-blur-xl rounded-2xl shadow-2xl p-8 border border-white/20 animate-slide-up">
+        {/* Auth Form Box */}
+        <div className="bg-white/10 backdrop-blur-md rounded-2xl shadow-2xl p-8 border border-[#E0E1DD]/10 animate-slide-up">
           <div className="mb-6">
-            <h2 className="text-2xl font-bold text-white mb-2">
+            <h2 className="text-2xl font-bold text-[#E0E1DD] mb-2">
               {isLogin ? 'Welcome Back' : 'Join FOCUS'}
             </h2>
-            <p className="text-blue-200">
+            <p className="text-[#B3AF8F]">
               {isLogin ? 'Sign in to access the platform' : 'Create your account to get started'}
             </p>
           </div>
@@ -74,17 +70,15 @@ const AuthPage: React.FC<AuthPageProps> = ({ onLogin }) => {
           <form onSubmit={handleSubmit} className="space-y-6">
             {!isLogin && (
               <div className="animate-fade-in">
-                <label className="block text-sm font-medium text-blue-100 mb-2">
-                  Full Name
-                </label>
+                <label className="block text-sm text-[#E0E1DD] mb-2">Full Name</label>
                 <div className="relative group">
-                  <User className="absolute left-3 top-3 h-5 w-5 text-blue-300 group-focus-within:text-gold-400 transition-colors" />
+                  <User className="absolute left-3 top-3 h-5 w-5 text-[#E0E1DD]/60" />
                   <input
                     type="text"
                     name="name"
                     value={formData.name}
                     onChange={handleInputChange}
-                    className="w-full pl-10 pr-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-blue-300 focus:ring-2 focus:ring-gold-400 focus:border-transparent transition-all backdrop-blur-sm"
+                    className="w-full pl-10 pr-4 py-3 bg-transparent border border-[#E0E1DD]/30 rounded-xl text-white placeholder-[#E0E1DD]/40 focus:ring-2 focus:ring-[#B3AF8F]"
                     placeholder="Enter your full name"
                     required
                   />
@@ -93,17 +87,15 @@ const AuthPage: React.FC<AuthPageProps> = ({ onLogin }) => {
             )}
 
             <div>
-              <label className="block text-sm font-medium text-blue-100 mb-2">
-                Email Address
-              </label>
+              <label className="block text-sm text-[#E0E1DD] mb-2">Email Address</label>
               <div className="relative group">
-                <Mail className="absolute left-3 top-3 h-5 w-5 text-blue-300 group-focus-within:text-gold-400 transition-colors" />
+                <Mail className="absolute left-3 top-3 h-5 w-5 text-[#E0E1DD]/60" />
                 <input
                   type="email"
                   name="email"
                   value={formData.email}
                   onChange={handleInputChange}
-                  className="w-full pl-10 pr-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-blue-300 focus:ring-2 focus:ring-gold-400 focus:border-transparent transition-all backdrop-blur-sm"
+                  className="w-full pl-10 pr-4 py-3 bg-transparent border border-[#E0E1DD]/30 rounded-xl text-white placeholder-[#E0E1DD]/40 focus:ring-2 focus:ring-[#B3AF8F]"
                   placeholder="Enter your email"
                   required
                 />
@@ -111,24 +103,22 @@ const AuthPage: React.FC<AuthPageProps> = ({ onLogin }) => {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-blue-100 mb-2">
-                Password
-              </label>
+              <label className="block text-sm text-[#E0E1DD] mb-2">Password</label>
               <div className="relative group">
-                <Lock className="absolute left-3 top-3 h-5 w-5 text-blue-300 group-focus-within:text-gold-400 transition-colors" />
+                <Lock className="absolute left-3 top-3 h-5 w-5 text-[#E0E1DD]/60" />
                 <input
                   type={showPassword ? 'text' : 'password'}
                   name="password"
                   value={formData.password}
                   onChange={handleInputChange}
-                  className="w-full pl-10 pr-12 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-blue-300 focus:ring-2 focus:ring-gold-400 focus:border-transparent transition-all backdrop-blur-sm"
+                  className="w-full pl-10 pr-12 py-3 bg-transparent border border-[#E0E1DD]/30 rounded-xl text-white placeholder-[#E0E1DD]/40 focus:ring-2 focus:ring-[#B3AF8F]"
                   placeholder="Enter your password"
                   required
                 />
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-3 text-blue-300 hover:text-gold-400 transition-colors"
+                  className="absolute right-3 top-3 text-[#B3AF8F]"
                 >
                   {showPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
                 </button>
@@ -137,17 +127,15 @@ const AuthPage: React.FC<AuthPageProps> = ({ onLogin }) => {
 
             {!isLogin && (
               <div className="animate-fade-in">
-                <label className="block text-sm font-medium text-blue-100 mb-2">
-                  Confirm Password
-                </label>
+                <label className="block text-sm text-[#E0E1DD] mb-2">Confirm Password</label>
                 <div className="relative group">
-                  <Lock className="absolute left-3 top-3 h-5 w-5 text-blue-300 group-focus-within:text-gold-400 transition-colors" />
+                  <Lock className="absolute left-3 top-3 h-5 w-5 text-[#E0E1DD]/60" />
                   <input
                     type={showPassword ? 'text' : 'password'}
                     name="confirmPassword"
                     value={formData.confirmPassword}
                     onChange={handleInputChange}
-                    className="w-full pl-10 pr-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-blue-300 focus:ring-2 focus:ring-gold-400 focus:border-transparent transition-all backdrop-blur-sm"
+                    className="w-full pl-10 pr-4 py-3 bg-transparent border border-[#E0E1DD]/30 rounded-xl text-white placeholder-[#E0E1DD]/40 focus:ring-2 focus:ring-[#B3AF8F]"
                     placeholder="Confirm your password"
                     required
                   />
@@ -158,7 +146,7 @@ const AuthPage: React.FC<AuthPageProps> = ({ onLogin }) => {
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full bg-gradient-to-r from-gold-500 to-amber-600 text-white py-3 rounded-xl font-semibold hover:from-gold-600 hover:to-amber-700 transform hover:scale-105 transition-all duration-200 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed relative overflow-hidden"
+              className="w-full bg-gradient-to-r from-[#B3AF8F] to-[#E0E1DD] text-[#0D1B2A] py-3 rounded-xl font-semibold hover:from-[#B3AF8F]/90 hover:to-[#E0E1DD]/90 transform hover:scale-105 transition-all duration-200 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isLoading ? (
                 <div className="flex items-center justify-center">
@@ -172,11 +160,11 @@ const AuthPage: React.FC<AuthPageProps> = ({ onLogin }) => {
           </form>
 
           <div className="mt-6 text-center">
-            <p className="text-blue-200">
+            <p className="text-[#E0E1DD]/80">
               {isLogin ? "Don't have an account?" : "Already have an account?"}
               <button
                 onClick={() => setIsLogin(!isLogin)}
-                className="ml-2 text-gold-400 hover:text-gold-300 font-semibold transition-colors"
+                className="ml-2 text-[#B3AF8F] hover:text-white font-semibold transition-colors"
               >
                 {isLogin ? 'Sign up' : 'Sign in'}
               </button>
@@ -184,8 +172,7 @@ const AuthPage: React.FC<AuthPageProps> = ({ onLogin }) => {
           </div>
         </div>
 
-        {/* Additional Info */}
-        <div className="text-center mt-6 text-blue-300 text-sm animate-fade-in-delay">
+        <div className="text-center mt-6 text-[#E0E1DD]/60 text-sm animate-fade-in-delay">
           <p>Secure • Trusted • Innovation-Driven</p>
         </div>
       </div>

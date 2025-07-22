@@ -1,20 +1,32 @@
 import React from 'react';
 import { GraduationCap } from 'lucide-react';
+import logo from '../images/focusLogo.png';
 
 const LoadingScreen: React.FC = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-navy-900 via-navy-800 to-indigo-900 flex items-center justify-center">
+    <div className="min-h-screen bg-gradient-to-br from-[#1B263B] via-[#0D1B2A] to-[#415A77] flex items-center justify-center">
       <div className="text-center">
+        {/* Pulsing Gradient Circle */}
         <div className="relative mb-8">
-          <div className="absolute inset-0 bg-gradient-to-r from-gold-400 to-amber-400 rounded-full animate-ping opacity-75"></div>
-          <div className="relative bg-gradient-to-r from-gold-500 to-amber-500 p-6 rounded-full">
-            <GraduationCap className="h-12 w-12 text-white animate-pulse" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#B3AF8F] to-[#E0E1DD] rounded-full animate-ping opacity-60"></div>
+          <div className="relative bg-gradient-to-r from-[#B3AF8F] to-[#E0E1DD] p-6 rounded-full">
+            <GraduationCap className="h-12 w-12 text-[#0D1B2A] animate-pulse" />
           </div>
         </div>
-        <h1 className="text-4xl font-bold text-white mb-4 animate-fade-in">FOCUS</h1>
-        <p className="text-xl text-blue-200 mb-8 animate-fade-in-delay">CSE Student Governance Body</p>
+
+        {/* Logo */}
+        <div className="flex justify-center mt-6 animate-fade-in">
+          <img src={logo} alt="Focus Logo" className="h-60 w-auto animate-fade-in" />
+        </div>
+
+        {/* Subtitle */}
+        <p className="text-xl text-[#B3AF8F] mb-2 animate-fade-in-delay">
+          CSE Student Governance Body
+        </p>
+
+        {/* Decorative Line */}
         <div className="flex justify-center">
-          <div className="w-16 h-1 bg-gradient-to-r from-gold-400 to-amber-400 rounded-full animate-pulse"></div>
+          <div className="w-16 h-1 bg-gradient-to-r from-[#B3AF8F] to-[#E0E1DD] rounded-full animate-pulse"></div>
         </div>
       </div>
     </div>
